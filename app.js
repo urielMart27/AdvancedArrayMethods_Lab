@@ -177,16 +177,37 @@ console.log("Filtered Dishes from chosen cuisine type:", chosenCuisineType);
 //3. Create a function that will return all dishes with the cuisine type of "Italian" and a serving size greater than 5.
 //Filter
 
+function filterItalianDishesWithServingSizeGreaterThan5(){
+    let results;
+    results = dishes.filter(function(el){
+        console.log("Dish Inside Filter", el)
+        return el.cuisine.toLocaleLowerCase() === "italian" && el.servings > 5;
+    });
+       
+    
+    return results;
+}
+
+let filteredDishes = filterItalianDishesWithServingSizeGreaterThan5();
+console.log("Filtered Dishes:", filteredDishes)
 
 
 //4. Create a function that will return only dishes whose id number matches their serving count.
 //Filter
+function filterDishesThatIdMatchServings(){
+    let results;
+    results = dishes.filter(function(el){
+        console.log("Dish Inside Filter", el)
+        return el.id === el.servings;
+    });
+    return results;
+}
 
-
+let disheswithMatchingIdAndServings = filterDishesThatIdMatchServings();
+console.log("Filtered Dishes:", disheswithMatchingIdAndServings);
 
 //5. Create a function that will return only dishes whose serving count is even.
 //Filter
-
 
 
 //6. Create a function that will return dishes whose ingredients array INCLUDES "chickpea".

@@ -242,11 +242,31 @@ console.log("Dishes That Inlcude Chickpea:", dishesThatIncludeChickpea);
 //7. Create a function that will prompt the user to type the name of one ingredient. Then use a filter to find all the dishes whose ingredients array INCLUDES that ingredient. Return the new array.
 //Filter
 
+function filterDishesThatIncludeChosenIngredient(){
 
+    let userInput = prompt("Enter an Ingredient");
+    let results = dishes.filter(function(el){
+        console.log("Dish Inside Filter", el)
+        return el.ingredients.includes(userInput)
+    });
+    return results;
+}
+
+let dishesThatIncludeChosenIngredient = filterDishesThatIncludeChosenIngredient();
+console.log("Dishes That Inlcude Chosen Ingredient:", dishesThatIncludeChosenIngredient);
 
 //8a. Create a function that will return an array of the string cuisine types. Ie, ["Italian", "Italian", "Mexican", ...]
 //Map
 
+function getCuisineTypes(){
+    let results = dishes.map(function(el){
+        return el.cuisine;
+    });
+    return results;
+}
+
+let cuisineTypes = getCuisineTypes();
+console.log("Cuisine Types:", cuisineTypes);
 
 
 //9. Create a function that will return an array of strings, with the cuisine type appended to the start of the dish's name. Ie, ["Italian Pizza", "Italian Spaghetti", ...]
